@@ -11,7 +11,7 @@ class Weather
 
     public function __construct()
     {
-        $this->apiKey = "3773a1bd190d398494cdaae3fdbb655d";
+        $this->apiKey = $_ENV['API_TOKEN'];
         $this->client = curl_init();
         curl_setopt($this->client, CURLOPT_RETURNTRANSFER, true);
 

@@ -6,6 +6,9 @@ require __DIR__.'/vendor/autoload.php';
 
 use App\Weather;
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
+
 if(isset($_POST['btn-search'])){
     $citySearched = $_POST['search'];
     $citySearched = filter_var($_POST['search'],FILTER_SANITIZE_STRING);

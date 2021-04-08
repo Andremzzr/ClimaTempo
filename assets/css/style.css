@@ -63,8 +63,13 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
 
-}
 
+    transition-duration: 0.2s;
+
+}
+.box:hover{
+    box-shadow: 0 0 1em rgb(122, 122, 122)
+}
 
 .pre-content{
     margin:5px; 
