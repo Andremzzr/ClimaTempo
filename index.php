@@ -18,11 +18,10 @@ if(isset($_POST['btn-search'])){
 
        $resultados = '';
         $weather = new Weather;
-        $formato = 'd/m/Y';
+      
         
         
         foreach($weather->getWeatherByCity($citySearched) as $value){
-          $currentlyDay = DateTime::createFromFormat($formato,$value['date']);
           
             $resultados .='<div class="previsoes">
             <div class="box">

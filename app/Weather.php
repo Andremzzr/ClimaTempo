@@ -17,6 +17,13 @@ class Weather
 
     }
     
+    /**
+     * This Function gets only one forecast for each day
+     * 
+     * @param array $arrayPrevisoes
+     * 
+     * @return array $listaDePrevisoes
+     */
     public static function getDayByDay(array $arrayPrevisoes){
         $listaDePrevisoes =[];
 
@@ -40,6 +47,13 @@ class Weather
     }
 
 
+    /**
+     * This method makes the connection with the api and returns to the user the informations 
+     * 
+     * @param string $name
+     * 
+     * @return array $listaDePrevisoesFinal
+     */
     public function getWeatherByCity(string $name): array
     {
         
@@ -56,7 +70,7 @@ class Weather
 
            $listaDePrevisoes = Weather::getDayByDay($result);
 
-           $listaDePrevisoesFinal =  [];
+           $listaDePrevisoesFinal =  array();
            foreach($listaDePrevisoes as $value){
                $listaDePrevisoesFinal[]= [
                    'temp_min' => round($value['main']['temp_min'] -273.15, 0),
