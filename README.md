@@ -3,7 +3,7 @@
 
 
 
-I'm working on this challange in the past few days, using HTML/CSS and PHP (Yeah, I know that my css sucks lol, I'm trying to improve it)
+I'm working on this challange in the past few days, using HTML/CSS and PHP (Yeah, I know that my css sucks lol, but I'm trying to improve it)
 
 
 I used the Open Weather API to fetch the weather data from the cities that you type in: </br>
