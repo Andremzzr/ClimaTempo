@@ -1,3 +1,4 @@
 vendor
 images
 .env
+test.php

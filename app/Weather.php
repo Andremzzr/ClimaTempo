@@ -26,7 +26,8 @@ class Weather
      */
     public static function getDayByDay(array $arrayPrevisoes){
         $listaDePrevisoes =[];
-
+           // echo $arrayPrevisoes;
+            
             foreach($arrayPrevisoes['list'] as $prevision){
                 if (count($listaDePrevisoes) == 0) {
                     $listaDePrevisoes[] = $prevision;
@@ -44,6 +45,7 @@ class Weather
             }
 
             return $listaDePrevisoes;
+        
     }
 
 

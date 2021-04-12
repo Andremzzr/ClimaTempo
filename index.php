@@ -23,51 +23,32 @@ if(isset($_POST['btn-search'])){
         
         foreach($weather->getWeatherByCity($citySearched) as $value){
           
-            $resultados .='<div class="previsoes">
-            <div class="box">
-          <div class="box-header">
-              <div class="pre-content"> 
-              <div class="date">'.$value['date'].'</div>
-            '.$value['weather'].'
+              
+          $resultados .='<div class="previsoes">
+                  <div class="box">
+                <div class="box-header">
+                    <div class="pre-content"> 
+                    <div class="date">'.$value['date'].'</div>
+                    '.$value['weather'].'
+                  
+                </div>
+                </div>
+
+            <div class="box-body">
+              
+            
+              <div class="cbt h-temp"><img src="images/icons/upload.png" class="img-temp">'.$value['temp_max'].'°C</div>
+              <div class="cbt l-temp"><img class="img-temp" src="images/icons/download.png">'.$value['temp_min'].'°C</div>
+              <div class="cb humidity"><img class="img-temp" src="images/icons/raindrop-close-up.png">'.$value['humidity'].'%</div>
+              <div class="cb pop"><img class="img-temp" src="images/icons/protection-symbol-of-opened-umbrella-silhouette-under-raindrops.png">'.$value['pop'].'%</div>
+
           </div>
-          </div>
-
-      <div class="box-body">
-        
-      <div class="box-body-left">
-      <div class="high-temp"> <img src="images/icons/upload.png" alt="Arrow up"><div class="high-temp-value">
-      '.$value['temp_max'].'°C</div> </div> 
+                </div>
+                </div>
+              </div>
 
 
-
-      <div class="low-temp"><img src="images/icons/download.png" alt="Arrow down"></div> <div class="low-temp-value">
-      '.$value['temp_min'].'°C</div>
-          <br>
-        </div>  
-    
-          
-          
-          
-        
-
-      
-      <div>
-      <div class="humidity">
-      <img src="images/icons/raindrop-close-up.png" alt="Water Drop">
-      <div class="humidity-value">'.$value['humidity'].'%</div>
-      </div>
-
-      <div class="pop">
-      <img src="images/icons/protection-symbol-of-opened-umbrella-silhouette-under-raindrops.png" alt="Umbrella in Rain" class="umbrella">
-      <div class="pop-value">'.$value['pop'].'%</div>  
-    </div>
-  </div>
-          </div>
-          </div>
-        </div>
-
-
-    </main>';
+          </main>';
         }
 
 

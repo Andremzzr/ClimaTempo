@@ -12,7 +12,9 @@ body{
     margin-bottom: 20px;
 }
 
+
 .title{
+    display: block;
     margin-top: 10px;
     height: 50px;
     width: 400px;
@@ -45,6 +47,7 @@ body{
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .previsoes{
@@ -52,8 +55,10 @@ body{
     justify-content: center;
 }
 .date{
-    
-    font-size: 20px;
+    text-decoration: underline;
+    font-size: 22px;
+
+    margin-bottom: 5px;
 }
 .box{
     width: 400px;
@@ -72,7 +77,8 @@ body{
 }
 
 .pre-content{
-    margin:5px; 
+    margin-left: 10px;
+     
       
     
 }
@@ -85,38 +91,32 @@ body{
 }
 
 .box-body{
-    display: flex;
+    display: grid;
     margin: 20px;
+    grid-template-columns: 180px 180px ;
     
 }
-.box-body-left{
-    margin-right: 240px;
-    display: inline-block;
-}
-.high-temp {
-    margin-bottom: 80px;
-   
-   
-}
-.high-temp-value{
-    color: red;
+.cbt{
+    margin-bottom: 50px;
 }
 
-.low-temp-value{
-    color: cornflowerblue;
-}
-.humidity {
-    display: flex;
-    margin-bottom: 80px;
+.cb, .cbt{
     
+    margin-right: 10px;
+
+    height: 50px;
+    justify-content: center;
+
+    font-size: 30px;
 }
-.r-drop{
-    margin-right: 20px;
+
+.h-temp{
+    color: red;
 }
-.umbrella{
-    margin-right: 20px;
+.l-temp{
+    color: royalblue;
 }
-.pop
-{
-    display: flex;
+.img-temp{
+    margin-right: 10px;
+    margin-top: 10px;
 }
