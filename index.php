@@ -56,7 +56,7 @@ if(isset($_POST['btn-search'])){
 
         <main>
               <div class="city-title">
-                  <div class="title">Previsão para <b><?php echo $citySearched. PHP_EOL; ?></b></div>
+                  <div class="title">Forecast for <b><?php echo $citySearched. PHP_EOL; ?></b></div>
     </div>
              
  
