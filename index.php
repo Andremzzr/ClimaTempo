@@ -18,17 +18,19 @@ if(isset($_POST['btn-search'])){
 
        $resultados = '';
         $weather = new Weather;
-      
-        
-        
-        foreach($weather->getWeatherByCity($citySearched) as $value){
+        $new_weather =$weather->getWeatherByCity($citySearched);
+        if ($new_weather == false) {
+            echo "Deu um erro";
+        }
+        else{
+        foreach($new_weather as $value){
           
-              
+          $date = str_replace('-','/',$value['date']);    
           $resultados .='<div class="previsoes">
                   <div class="box">
                 <div class="box-header">
                     <div class="pre-content"> 
-                    <div class="date">'.$value['date'].'</div>
+                    <div class="date">'.$date.'</div>
                     '.$value['weather'].'
                   
                 </div>
@@ -50,13 +52,13 @@ if(isset($_POST['btn-search'])){
 
           </main>';
         }
-
+    }
 
         ?>
 
         <main>
               <div class="city-title">
-                  <div class="title">Previsão para <b><?php echo $citySearched. PHP_EOL; ?></b></div>
+                  <div class="title">Forecast for <b><?php echo $citySearched. PHP_EOL; ?></b></div>
     </div>
              
  

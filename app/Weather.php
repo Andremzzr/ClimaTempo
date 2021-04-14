@@ -25,27 +25,30 @@ class Weather
      * @return array $listaDePrevisoes
      */
     public static function getDayByDay(array $arrayPrevisoes){
-        $listaDePrevisoes =[];
-           // echo $arrayPrevisoes;
+           
             
-            foreach($arrayPrevisoes['list'] as $prevision){
-                if (count($listaDePrevisoes) == 0) {
-                    $listaDePrevisoes[] = $prevision;
+                $listaDePrevisoes =[];
+
+
+                foreach($arrayPrevisoes['list'] as $prevision){
+                    if (count($listaDePrevisoes) == 0) {
+                        $listaDePrevisoes[] = $prevision;
+                    }
+                    $data = $prevision['dt_txt'][8] . $prevision['dt_txt'][9];
+
+                    $lastInArray = end($listaDePrevisoes);
+                    $lastData = $lastInArray['dt_txt'][8] . $lastInArray['dt_txt'][9];
+
+                    if ($data == $lastData)  {
+                        continue;
+                    }else{
+                        $listaDePrevisoes[] = $prevision;
+                    }
                 }
-                $data = $prevision['dt_txt'][8] . $prevision['dt_txt'][9];
 
-                $lastInArray = end($listaDePrevisoes);
-                $lastData = $lastInArray['dt_txt'][8] . $lastInArray['dt_txt'][9];
-
-                if ($data == $lastData)  {
-                    continue;
-                }else{
-                    $listaDePrevisoes[] = $prevision;
-                }
-            }
-
-            return $listaDePrevisoes;
-        
+                return $listaDePrevisoes;
+           
+                
     }
 
 
@@ -71,7 +74,9 @@ class Weather
             $result = json_decode(curl_exec($this->client), true);
 
            $listaDePrevisoes = Weather::getDayByDay($result);
-
+            if ($listaDePrevisoes == false) {
+                return false;
+            }else{
            $listaDePrevisoesFinal =  array();
            foreach($listaDePrevisoes as $value){
                $listaDePrevisoesFinal[]= [
@@ -86,7 +91,7 @@ class Weather
 
            return $listaDePrevisoesFinal;
             
-       
+        }
 
     }
 
